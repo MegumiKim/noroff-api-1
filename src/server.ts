@@ -32,7 +32,9 @@ import aucstionListingRoutes from "./modules/auction/listings/listings.route"
 function buildServer() {
   const server = Fastify({
     // Allows routes to end with a slash instead of throwing a 404
-    ignoreTrailingSlash: true
+    ignoreTrailingSlash: true,
+    // Allows routes to be case insensitive
+    caseSensitive: false
   }).withTypeProvider<ZodTypeProvider>()
 
   // Set custom validator and serializer compilers for Zod
